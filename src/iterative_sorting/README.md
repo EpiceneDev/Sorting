@@ -10,6 +10,7 @@ Think back to class or team picture day. Everyone stands in a line facing the ph
 ### Algorithm
 1. Separate the first element from the rest of the array. Think about it as a sorted list of one element.
 
+
 2. For all other indices, beginning with [1]:
 
     a. Copy the item at that index into a temp variable
