@@ -12,13 +12,17 @@ def merge( arrA, arrB ):
     j = 0
     # perform the actions thru both arrays
     while i < len(arrA) and j < len(arrB):
+        # if second array's value is larger than first array's value
+        # if true, add it to the new merged array and go to next element in the array
         if arrB[j] > arrA[i]:
             merged_arr.append(arrA[i])
             ++i
+        # if not true, merge value from second array (because it is smaller)
         else:
             merged_arr.append(arrB[j])
             ++j
-
+    # Whichever array remains as the last one, 
+    # the remaining values will be pushed into the merged array.
     while i < len(arrA):
         merged_arr.append(arrA[i])
         ++i
@@ -26,7 +30,7 @@ def merge( arrA, arrB ):
     while j < len(arrB):
         merged_arr.append(arrB[j])
         ++j
-        
+
     return merged_arr
 
 
