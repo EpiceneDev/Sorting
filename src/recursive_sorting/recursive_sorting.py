@@ -1,37 +1,36 @@
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 def merge( arrA, arrB ):
-    # starting at beginning of `a` and `b`
-    # compare the next value of each
-    # add smallest to `merged_arr`
+    # given 2 sorted arrays,
+    # return a new combined array
 
-    elements = len( arrA ) + len( arrB )
-    merged_arr = [0] * elements
+    merged_arr = []
    
     # TO-DO
     i = 0
     j = 0
     # perform the actions thru both arrays
     while i < len(arrA) and j < len(arrB):
-        # if second array's value is larger than first array's value
-        # if true, add it to the new merged array and go to next element in the array
-        if arrB[j] > arrA[i]:
+        # compare the two vlues, choose the smaller one
+        if arrB[j] >= arrA[i]:
             merged_arr.append(arrA[i])
-            ++i
+            i+=1
         # if not true, merge value from second array (because it is smaller)
         else:
             merged_arr.append(arrB[j])
-            ++j
+            j+=1
     # Whichever array remains as the last one, 
     # the remaining values will be pushed into the merged array.
-    while i < len(arrA):
-        merged_arr.append(arrA[i])
-        ++i
+    # while i < len(arrA):
+    #     merged_arr.append(arrA[i])
+    #     i+=1
 
-    while j < len(arrB):
-        merged_arr.append(arrB[j])
-        ++j
+    # while j < len(arrB):
+    #     merged_arr.append(arrB[j])
+    #     j+=1
 
-    return merged_arr
+    return merged_arr + arrA[i:] + arrB[j:]
+
+
 
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
@@ -41,8 +40,18 @@ def merge_sort( arr ):
         # recursively call merge_sort() on RHS
         # merge sorted pieces
     # TO-DO
+    # base-case (easiest case)
+    if len(arr) <= 1:
+        return arr
+    
 
-    return arr
+    # divide the arrays
+    half = len(arr) // 2
+    left = arr[0:half]
+    right = arr[half:]
+
+    # merging sorted arrays
+    return merge_sort(left, right)
 
 
 # STRETCH: implement an in-place merge sort algorithm
