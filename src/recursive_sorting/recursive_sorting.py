@@ -20,15 +20,8 @@ def merge( arrA, arrB ):
             j+=1
     # Whichever array remains as the last one, 
     # the remaining values will be pushed into the merged array.
-    # while i < len(arrA):
-    #     merged_arr.append(arrA[i])
-    #     i+=1
-
-    # while j < len(arrB):
-    #     merged_arr.append(arrB[j])
-    #     j+=1
-
-    return merged_arr + arrA[i:] + arrB[j:]
+   
+    return merged_arr  + arrA[i:] + arrB[j:]
 
 
 
@@ -50,8 +43,13 @@ def merge_sort( arr ):
     left = arr[0:half]
     right = arr[half:]
 
+    return merge(merge_sort(left), merge_sort(right))
     # merging sorted arrays
-    return merge_sort(left, right)
+    # return merge(left, right)
+
+
+print(merge_sort([1, 5, 8, 4, 2, 9, 6, 0, 3, 7]))
+
 
 
 # STRETCH: implement an in-place merge sort algorithm
@@ -71,19 +69,3 @@ def merge_sort_in_place(arr, l, r):
 def timsort( arr ):
 
     return arr
-
-def merge_sort( arr ):
-    if len( arr ) > 1: 
-        # recursively call merge_sort() on LHS
-        # recursively call merge_sort() on RHS
-        # merge sorted pieces
-
-def merge_helper( a, b ):
-    merged_arr = []
-
-    # starting at beginning of `a` and `b`
-    # compare the next value of each
-    # add smallest to `merged_arr`
-
-    return merged_arr
-
