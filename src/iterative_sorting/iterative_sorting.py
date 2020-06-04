@@ -19,26 +19,18 @@ def selection_sort( arr ):
 
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):    
-    swap = True
-    while swap:
-        swap = False
-        pointer = len(arr)
-
-    for j in range(0, pointer-1):
-        if arr[j] > arr[j+1]:
-            arr[j], arr[j+1] = arr[j+1], arr[j]
-    #double loops so that the program can go through each iteration of the array n(the length of the array) times
-    #if there are 4 items in an array, the program will iterate through the array a total of 16 times
-    #outer loop will execute the inner loop 4 times
-    # for i in range(0, len(arr) - 1):  
-    #     for j in range(0, len(arr) - 1):
-            
-    #         if arr[j] > arr[j + 1]: #if item at j is 5 and item at j+1 is 3
-    #             temp = arr[j] #put 5(larger num) in temp
-    #             arr[j] = arr[j + 1] #place the smaller value at j+1 (3) where j was
-    #             arr[j+1] = temp #then put 5(larger value) that was in temp in position j+1
+def bubble_sort( arr ):   
+    # iterate through the array for the length
+    # iterate through the array for the next item minus any sorted items
+    # compare the first pair of elements
+    # if the RHS is less thean the LHS, swap
+    # else, do nothing
     
+    for i in range(0, len(arr)-1):
+        for j in range(0, len(arr)-1-i):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
     return arr     
 
 
