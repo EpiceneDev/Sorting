@@ -1,4 +1,4 @@
-# TO-DO: Complete the selection_sort() function below 
+# TO-DO: Complete the selection_sort() function below  O(n^2)
 def selection_sort( arr ):
     for i in range(0, len(arr) - 1):
 #   set the first unsorted element as the minimum
