@@ -3,6 +3,7 @@ def linear_search(arr, target):
   
   # TO-DO: add missing code
 
+
    return -1   # not found
 
 
@@ -28,3 +29,4 @@ def binary_search_recursive(arr, target, low, high):
   if len(arr) == 0:
     return -1 # array empty
   # TO-DO: add missing if/else statements, recursive calls
+  pass
